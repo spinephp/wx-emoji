@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/rabbit/rabbit",
+    "pages/food/food"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "笑脸释文解意",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#35495e",
+    "borderStyle": "white",
+    "backgroundColor": "#f9f9f9",
+    "list": [
+      {
+        "text": "笑脸",
+        "pagePath": "pages/index/index",
+        "iconPath": "images/face0.png",
+        "selectedIconPath": "images/face.png"
+      },
+      {
+        "text": "动物",
+        "pagePath": "pages/rabbit/rabbit",
+        "iconPath": "images/Two.png",
+        "selectedIconPath": "images/Two.png"
+      },
+      {
+        "text": "食物",
+        "pagePath": "pages/food/food",
+        "iconPath": "images/One.png",
+        "selectedIconPath": "images/One.png"
+      }
+    ]
+  }
+}

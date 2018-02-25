@@ -1,0 +1,48 @@
+<!--pages/rabbit/rabbit.wxml
+<view class="tapNav">
+  <view class="{{tabArr.tabCurrentIndex==0?'active':''}}" data-index="0" bindtap="veHandle"></view>
+  <view class="{{tabArr.tabCurrentIndex==1?'active':''}}"  data-index="1" bindtap="veHandle"></view>
+  <view class="{{tabArr.tabCurrentIndex==2?'active':''}}"  data-index="2" bindtap="veHandle"></view>
+</view>-->
+<scroll-view scroll-y="true" class="scrollview">
+<view class="imgtitle">
+  {{imgs[current][imgsCurrent]}}{{imgsArr.name}}
+</view>
+<view>{{imgsArr.introduction}}</view>
+<view>{{imgsArr.stand}}</view>
+
+<view class="viewrow">
+  复制和粘贴表情 
+  <text class="tblin_items_txt" selectable="true">{{imgs[current][imgsCurrent]}} </text>
+  <button bindtap="copyEmoji">复制</button>
+</view>
+
+<view>
+  <text class="text-caption">别名</text>
+  <text wx:for="{{imgsArr.alias}}"  class="text-content">{{imgs[current][imgsCurrent]}} {{item}}</text>
+</view>
+
+<view>
+  <text class="text-caption">代码点</text>
+  <text>{{imgs[current][imgsCurrent]}} {{imgsArr.code}}</text>
+</view>
+
+<view>
+  <text class="text-caption">短代码</text>
+  <text>{{imgsArr.shortcode}}</text>
+</view>
+
+<view>
+  <text class="text-caption">相关的</text>
+  <text wx:for="{{imgsArr.related}}"  class="text-content" data-index="{{item.id}}" bindtap="imgHandle">{{imgs[item.id>>5][item.id%32]}} {{item.name}}</text>
+</view>
+
+</scroll-view>
+<swiper id="swiper" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{current}}" bindchange="swiperChange">
+  <block wx:for="{{imgs}}" wx:for-index="p_index">
+    <swiper-item id="swiper-item">
+      <text wx:for="{{item}}" data-index="{{p_index*32+index}}" bindtap="imgHandle"> {{item}} </text>
+    </swiper-item>
+  </block>
+</swiper>
